@@ -2,10 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Mapa Story</title>
+    <title>Mapa Story</title>
     
-    <!-- CARGA DE LA LIBRERÍA -->
+    <!-- ⚠️ ESTA LÍNEA ES LA QUE TE FALTA Y CAUSA EL ERROR ⚠️ -->
     <script src="https://cloudflare.com"></script>
 
     <style>
@@ -15,25 +14,18 @@
 </head>
 <body>
 
-    <!-- CONTENEDOR DONDE SE VE EL MAPA -->
     <div id="viewer"></div>
 
     <script>
+        // Este código fallaba porque no encontraba la librería de arriba
         var viewer = OpenSeadragon({
             id: "viewer",
-            // Iconos de la interfaz
             prefixUrl: "https://cloudflare.com",
-            
             tileSources: {
                 type: 'zoomifytileservice',
-                // ESTA ES LA RUTA A TU REPOSITORIO
-                url: 'https://github.io'
-            },
-            
-            showNavigator: true,
-            gestureSettingsMouse: { clickToZoom: true }
+                url: 'https://bryanlucero23-ui.github.io/Mapa_Story/'
+            }
         });
     </script>
-
 </body>
 </html>
