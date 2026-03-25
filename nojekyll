@@ -1,0 +1,4 @@
+touch .nojekyll
+git add .nojekyll
+git commit -m "Agregar archivo .nojekyll"
+git push origin main
