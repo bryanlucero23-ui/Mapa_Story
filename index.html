@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Mapa Story</title>
-    
-    <!-- LIBRERÍA OBLIGATORIA (ENLACE COMPLETO) -->
+    <!-- ESTA LÍNEA ES EL "MOTOR" QUE FALTA -->
     <script src="https://cloudflare.com"></script>
-
     <style>
         body, html { margin: 0; padding: 0; height: 100%; width: 100%; background-color: #000; }
         #viewer { width: 100%; height: 100vh; }
     </style>
 </head>
 <body>
-
     <div id="viewer"></div>
-
     <script>
         var viewer = OpenSeadragon({
             id: "viewer",
             prefixUrl: "https://cloudflare.com",
             tileSources: {
                 type: 'zoomifytileservice',
-                // Tu URL real de GitHub
-                url: 'https://bryanlucero23-ui.github.io/Mapa_Story/'
+                url: 'https://github.io'
             }
         });
     </script>
-
 </body>
 </html>
