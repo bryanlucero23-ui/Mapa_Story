@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Mapa Story</title>
-    
-    <!-- ⚠️ ESTA LÍNEA ES LA QUE TE FALTA Y CAUSA EL ERROR ⚠️ -->
+    <!-- ESTA LÍNEA DEBE IR AQUÍ SÍ O SÍ -->
     <script src="https://cloudflare.com"></script>
-
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; background-color: #000; }
+        body, html { margin: 0; padding: 0; height: 100%; background: #000; }
         #viewer { width: 100%; height: 100vh; }
     </style>
 </head>
 <body>
-
     <div id="viewer"></div>
-
     <script>
-        // Este código fallaba porque no encontraba la librería de arriba
+        // Este código ahora sí funcionará porque la librería arriba lo respalda
         var viewer = OpenSeadragon({
             id: "viewer",
             prefixUrl: "https://cloudflare.com",
