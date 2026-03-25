@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+
+    <!-- 🔥 ESTA LÍNEA ES LA QUE TE FALTA -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/5.0.1/openseadragon.min.js"></script>
+
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #viewer {
+            width: 100%;
+            height: 100vh;
+            background: black;
+        }
+    </style>
 </head>
+
 <body>
 
-<div id="viewer" style="width:100%; height:100vh;"></div>
+<div id="viewer"></div>
 
 <script>
 OpenSeadragon({
