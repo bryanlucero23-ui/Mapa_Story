@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Visor de Mapa de Alta Resolución</title>
-    <!-- Cargamos la librería desde el CDN oficial -->
     <script src="https://cloudflare.com"></script>
-
     <style>
-        html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #000; }
+        html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; }
         #viewer { width: 100%; height: 100vh; }
     </style>
 </head>
@@ -18,27 +16,22 @@
 <script>
     var viewer = OpenSeadragon({
         id: "viewer",
-        // Iconos de la interfaz (zoom, home, etc.)
         prefixUrl: "https://github.io",
         showNavigator: true,
         tileSources: {
-            /* 
-               PASO IMPORTANTE: Abre tu archivo 'ImageProperties.xml' 
-               y reemplaza estos números con los que veas ahí:
-            */
-            width: 10000,    // <--- Pon el valor de 'Width'
-            height: 8000,   // <--- Pon el valor de 'Height'
-            tileSize: 256,  // <--- Pon el valor de 'TileSize' (suele ser 256 o 512)
-            tileOverlap: 1, // <--- Pon el valor de 'Overlap' (suele ser 1 o 0)
-            
-            /* 
-               Esta función le dice al navegador dónde están tus imágenes reales.
-               Asegúrate de que la carpeta se llame exactamente 'ImageProperties_files'
-            */
-            getTileUrl: function( level, x, y ) {
-                return "ImageProperties_files/" + level + "/" + x + "_" + y + ".jpg";
-            }
+            type: 'xml',
+            url: './ImageProperties.xml' 
         }
+    });
+
+    // Forzamos la lectura si el XML falla por seguridad en GitHub
+    viewer.addHandler('open-failed', function(event) {
+        console.log("Reintentando carga manual...");
+        // Si el XML falla, intenta cargar el primer TileGroup directamente
+        viewer.open({
+            type: 'image',
+            url: 'TileGroup0/0-0-0.jpg' // Verifica si tus fotos terminan en .jpg o .png
+        });
     });
 </script>
 
