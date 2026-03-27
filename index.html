@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Visor de Mapa de Alta Resolución</title>
+    <title>Visor Zoomify</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
     <style>
         html, body {
@@ -28,8 +28,12 @@
         prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
         showNavigator: true,
         tileSources: {
-            type: 'zoomifytileservice',
-            url: 'https://bryanlucero23-ui.github.io/Mapa_Story/'
+            type: "zoomifytileservice",
+            width: 4093,
+            height: 2894,
+            tileSize: 256,
+            tilesUrl: "https://bryanlucero23-ui.github.io/Mapa_Story/",
+            fileFormat: "jpg"
         }
     });
 </script>
